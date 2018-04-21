@@ -87,7 +87,8 @@ public class Tank extends Actor {
 			{
 				int tempRow = tankMapRow +yOffset, tempCol= tankMapCol+xOffset;
 				//System.out.print("[" + tempRow + ", " + tempCol + "]");
-				if(tempRow >= 0 && tempRow < 40 && tempCol < 40 && tempCol >= 0 && map[tempRow][tempCol] == 1)// && !(x ==0 && y ==0))
+				//if(tempRow >= 0 && tempRow < 40 && tempCol < 40 && tempCol >= 0 && map[tempRow][tempCol] == 1)// && !(x ==0 && y ==0))
+				if(tempRow < 0 || tempRow >= 40 || tempCol >= 40 || tempCol < 0 || map[tempRow][tempCol] == 1)
 				{
 					int tempX = tempCol*128, tempY = 40*128-tempRow*128; //a tile's top left coordinate, not bottom left, 
 												//due to rounding down with int tankMapRow = (int)((40*128-y)/128), 
